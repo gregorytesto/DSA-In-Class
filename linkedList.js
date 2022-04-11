@@ -20,15 +20,6 @@ class LinkedList {
 		this.head = this.head.next;
 		return temp.data;
 	}
-
-	// Find
-	// InsertAtEnd
-	// Find kth
-	// Find kth from last
-	// Size as method/property
-	// Convert to Array
-	// Sort
-	// Empty
 }
 
 let list = new LinkedList();
