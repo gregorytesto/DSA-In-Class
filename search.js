@@ -77,8 +77,24 @@ const binarySearch = (arr, valueToFind) => {
 	return -1;
 };
 
-let result = binarySearch(numArr, 20);
+let result = binarySearch(numArr, 21);
 console.log(result);
+
+const binarySearchRecursive = (arr, valueToFind, left = 0, right = arr.length - 1) => {
+	if (left === right) {
+		if (arr[left] === valueToFind) return left;
+		return -1;
+	}
+	let midInd = Math.floor((left + right) / 2);
+	if (arr[midInd] === valueToFind) return midInd;
+	if (arr[midInd] < valueToFind) {
+		left = midInd + 1;
+		return binarySearch(arr, valueToFind, left, right);
+	}
+	right = midInd - 1;
+	return binarySearch(arr, valueToFind, left, right);
+};
+
 // Jump - Large Size Datasets
 
 // Exponential - Very Large Size Datasets
